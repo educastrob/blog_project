@@ -18,7 +18,7 @@ def	_list_users():
 	return [
 		{
 			"id": user.id,
-			"username": user.username
+			"username": user.username,
 		}
 		for user in users
 	]
@@ -30,3 +30,11 @@ def handle_user():
 		return {"message": "User created!"}, HTTPStatus.CREATED
 	else:
 		return {"users": _list_users()}
+	
+@app.route('/<int:user_id>')
+def	get_by_id(user_id):
+	user = db.get_or_404(User, user_id)
+	return {
+		"id": user.id,
+		"username": user.username,
+	}
