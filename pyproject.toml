@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "bank-project"
+name = "blog-project"
 version = "0.1.0"
 description = ""
 authors = ["Eduardo Castro <eduardocastrobritoo@gmail.com>"]
@@ -10,6 +10,7 @@ python = "^3.12"
 flask = "^3.0.3"
 numpy = "^2.0.1"
 flask-sqlalchemy = "*"
+sqlalchemy = "^2.0.34"
 
 
 [build-system]

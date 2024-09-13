@@ -56,8 +56,16 @@ def create_app(test_config=None):
         # load the test config if passed in
         app.config.from_mapping(test_config)
 
-
+	# register cli commands
     app.cli.add_command(init_db_command)
+
+	# initialize extensions
     db.init_app(app)
+
+	#register blueprints
+    from src.controllers import user, post
+
+    app.register_blueprint(user.app)
+    app.register_blueprint(post.app)
 
     return app
