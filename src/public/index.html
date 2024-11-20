@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monitoramento de Consumo de Água</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Monitoramento de Consumo de Água</h1>
+
+  <section id="cadastro">
+    <h2>Cadastro de Consumo</h2>
+    <form id="cadastroForm">
+      <label for="usuarioId">Código do Usuário:</label>
+      <input type="number" id="usuarioId" required>
+      
+      <label for="consumo">Quantidade Consumida (m³):</label>
+      <input type="number" id="consumo" required>
+      
+      <label for="dataLeitura">Data do Consumo:</label>
+      <input type="date" id="dataLeitura" required>
+      
+      <button type="submit">Cadastrar</button>
+    </form>
+  </section>
+
+  <section id="historico">
+    <h2>Histórico de Consumo</h2>
+    <form id="historicoForm">
+      <label for="usuarioIdHistorico">Código do Usuário:</label>
+      <input type="number" id="usuarioIdHistorico" required>
+      
+      <label for="inicio">Data Inicial:</label>
+      <input type="date" id="inicio" required>
+      
+      <label for="fim">Data Final:</label>
+      <input type="date" id="fim" required>
+      
+      <button type="submit">Consultar</button>
+    </form>
+    <ul id="historicoResultado"></ul>
+  </section>
+
+  <section id="alertas">
+    <h2>Alertas de Consumo Elevado</h2>
+    <form id="alertasForm">
+      <label for="usuarioIdAlerta">Código do Usuário:</label>
+      <input type="number" id="usuarioIdAlerta" required>
+      
+      <button type="submit">Ver Alertas</button>
+    </form>
+    <div id="alertaResultado"></div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
